@@ -1,0 +1,1 @@
+**Basic page with header and a footer**
