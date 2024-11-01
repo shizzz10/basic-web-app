@@ -16,7 +16,7 @@
     <div class="min-h-screen bg-stone-300 lg:bg-transparent">
                        <!-- Header   -->
     <div
-      class="mainDiv bg-color text-white p-2 lg:p-3 flex justify-between rounded-br-3xl  rounded-bl-3xl  h-1/4"
+      class="sticky mainDiv bg-color text-white p-2 lg:p-3 flex justify-between rounded-br-3xl  rounded-bl-3xl  h-1/4"
     >
       <div class="flex">
         <div class="flex gap-1 lg:gap-3 shrink-0">
@@ -60,7 +60,7 @@
         >
          <span class="no-break whitespace-nowrap c-text-xs sm:text-xs">License expires in | <span class="font-semibold">Extend now</span> </span> 
         </a>
-        <p class="invisible lg:visible text-xs lg:text-sm">
+        <p class="hidden-on-mobile text-xs lg:text-sm">
           Sunday 6th October
         </p>
       </div>
@@ -70,27 +70,32 @@
     <div class="lg:p-3 text-stone-400 lg-light-bg  lg:m-3">
       <div class="flex gap-2 lg:gap-10 items-center">
         <div
-          class="mb-bg-color flex gap-10 items-center justify-between lg:relative lg:bottom-auto lg:w-auto fixed bottom-0 w-full p-2 "
+          class="mb-bg-color flex gap-10 items-center justify-between lg:relative lg:bottom-auto lg:w-auto fixed bottom-0 w-full px-6 py-2 "
         >
-          <div class="flex flex-col items-center">
-            <i class="fa-solid fa-house lg-light-bg text-xl"></i>
-            <span class="font-medium text-xs sm:text-base lg-light-bg">Home</span>
+          <div class="flex flex-col items-center c-bg-hover statusDiv" > 
+            <img src="./assets/images/svgs/home.svg" class="fa-solid fa-hospital lg-light-bg w-6 lg:w-10 " alt="">
+            <!-- <i class="fa-solid fa-house lg-light-bg text-xl "></i> -->
+            <span class="font-medium c-text-xs sm:text-base lg-light-bg">Home</span>
           </div>
-          <div class="flex flex-col items-center">
-            <i class="fa-solid fa-chart-line lg-light-bg text-xl"></i>
-            <span class="font-medium text-xs sm:text-base lg-light-bg">Reports</span>
+          <div class="flex flex-col items-center c-bg-hover statusDiv">
+            <img src="./assets/images/svgs/report-2.svg" class="fa-solid fa-hospital lg-light-bg w-6 lg:w-10 " alt="">
+            <!-- <i class="fa-solid fa-chart-line lg-light-bg text-xl"></i> -->
+            <span class="font-medium c-text-xs sm:text-base lg-light-bg">Reports</span>
           </div>
-          <div class="flex flex-col items-center">
-            <i class="fa-solid fa-chart-pie lg-light-bg text-xl"></i>
-            <span class="font-medium text-xs sm:text-base lg-light-bg">My Status </span>
+          <div class="flex flex-col items-center c-bg-hover statusDiv">
+            <img src="./assets/images/svgs/my-stats.svg" class="fa-solid fa-hospital lg-light-bg w-6 lg:w-10 " alt="">
+            <!-- <i class="fa-solid fa-chart-pie lg-light-bg text-xl"></i> -->
+            <span class="font-medium c-text-xs sm:text-base lg-light-bg">My Status </span>
           </div>
-          <div class="flex flex-col items-center">
-            <i class="fa-solid fa-chart-gantt lg-light-bg text-xl"></i>
-            <span class="font-medium text-xs sm:text-base lg-light-bg">Site Status </span>
+          <div class="flex flex-col items-center c-bg-hover statusDiv">
+            <img src="./assets/images/svgs/site-stats.svg" class="fa-solid fa-hospital lg-light-bg w-6 lg:w-10 " alt="">
+            <!-- <i class="fa-solid fa-chart-gantt lg-light-bg text-xl"></i> -->
+            <span class="font-medium c-text-xs sm:text-base lg-light-bg">Site Status </span>
           </div>
-          <div class="flex flex-col items-center">
-            <i class="fa-solid fa-hospital lg-light-bg text-xl"></i>
-            <span class="font-medium text-xs sm:text-base lg-light-bg">Emergency </span>
+          <div class="flex flex-col items-center c-bg-hover statusDiv" >
+            <img src="./assets/images/svgs/emergency.svg" class="fa-solid fa-hospital lg-light-bg w-6 lg:w-10 " alt="">
+            <!-- <i class="fa-solid fa-hospital lg-light-bg text-xl"></i> -->
+            <span class="font-medium c-text-xs sm:text-base lg-light-bg">Emergency </span>
           </div>
         </div>
 
@@ -111,7 +116,7 @@
           >
             <input
               type="text"
-              class="border-2 border-[#0b5f7d] rounded-full p-2 w-80 py-2 hidden-on-mobile"
+              class="border-2 border-[#0b5f7d] rounded-full p-2 w-72 py-2 hidden-on-mobile"
               placeholder="Search here"
             />
             <i class="fa-solid fa-magnifying-glass absolute right-2 top-1/2"></i>
@@ -122,5 +127,17 @@
       <hr class="hidden-on-mobile border border-light-bg my-3" />
 
     </div>
+    <!-- JS for Implementing overline Effect on the Clicked svgs -->
+    <script>
+      const statusDivs = document.querySelectorAll('.statusDiv');
+
+      statusDivs.forEach(statusDiv => {
+        statusDiv.addEventListener('click', (event) => {
+          statusDivs.forEach(div => div.classList.remove('overline'));
+          event.currentTarget.classList.add('overline');
+        });
+      });
+      
+    </script>
   </body>
 </html>

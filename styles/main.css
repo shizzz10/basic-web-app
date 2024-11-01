@@ -5,11 +5,17 @@
 .light-bg{
     color: #04759c; 
 }
+.c-bg-hover:hover{
+  background-color: #0c94c114; 
+}
 .bg-color{
     background: linear-gradient(to bottom, #0b5f7d, #04759c);
 }
 .mb-bg-color{
   background : linear-gradient(to bottom, #0b5f7d, #04759c);
+}
+.overline{
+  text-decoration: overline;
 }
 /* .btn-bg{
     background-color: #0b5f7d;
